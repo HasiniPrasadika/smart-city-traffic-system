@@ -12,6 +12,7 @@ logs/
 
 # Spark checkpoints
 output/checkpoints/
+output/critical_alerts/
 
 # OS files
 .DS_Store

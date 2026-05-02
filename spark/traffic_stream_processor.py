@@ -54,13 +54,24 @@ congestion_window_df = traffic_df \
         col("total_vehicle_count") / col("window_avg_speed")
     )
 
-critical_query = critical_alerts_df.writeStream \
+# Query 1: Critical alerts → console
+critical_query_console = critical_alerts_df.writeStream \
     .outputMode("append") \
     .format("console") \
     .option("truncate", False) \
-    .queryName("CriticalTrafficAlerts") \
+    .queryName("CriticalTrafficAlerts_Console") \
     .start()
 
+# Query 2: Critical alerts → folder
+critical_query_file = critical_alerts_df.writeStream \
+    .outputMode("append") \
+    .format("json") \
+    .option("path", "output/critical_alerts") \
+    .option("checkpointLocation", "output/checkpoints/critical_alerts") \
+    .queryName("CriticalTrafficAlerts_File") \
+    .start()
+
+# Query 3: Window aggregation → console
 window_query = congestion_window_df.writeStream \
     .outputMode("update") \
     .format("console") \
@@ -68,5 +79,6 @@ window_query = congestion_window_df.writeStream \
     .queryName("CongestionWindowAnalysis") \
     .start()
 
-critical_query.awaitTermination()
+critical_query_console.awaitTermination()
+critical_query_file.awaitTermination()
 window_query.awaitTermination()
