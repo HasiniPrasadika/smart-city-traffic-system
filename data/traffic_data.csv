@@ -1,0 +1,17 @@
+sensor_id,junction_name,timestamp,vehicle_count,avg_speed
+J001,Borella Junction,2026-04-24 07:10:00,45,25
+J001,Borella Junction,2026-04-24 08:20:00,95,8
+J001,Borella Junction,2026-04-24 08:40:00,88,9
+J001,Borella Junction,2026-04-24 17:30:00,70,18
+J002,Town Hall Junction,2026-04-24 07:15:00,60,22
+J002,Town Hall Junction,2026-04-24 09:10:00,110,7
+J002,Town Hall Junction,2026-04-24 09:45:00,100,9
+J002,Town Hall Junction,2026-04-24 18:10:00,80,15
+J003,Maradana Junction,2026-04-24 08:05:00,75,16
+J003,Maradana Junction,2026-04-24 12:20:00,40,35
+J003,Maradana Junction,2026-04-24 17:15:00,120,6
+J003,Maradana Junction,2026-04-24 17:50:00,105,8
+J004,Nugegoda Junction,2026-04-24 07:30:00,55,28
+J004,Nugegoda Junction,2026-04-24 10:15:00,65,24
+J004,Nugegoda Junction,2026-04-24 18:30:00,115,7
+J004,Nugegoda Junction,2026-04-24 18:45:00,108,8

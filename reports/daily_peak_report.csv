@@ -1,0 +1,5 @@
+sensor_id,junction_name,hour,total_vehicle_count,avg_speed,congestion_index,recommendation
+J001,Borella Junction,8,183,8.5,21.53,Traffic police intervention required
+J002,Town Hall Junction,9,210,8.0,26.25,Traffic police intervention required
+J003,Maradana Junction,17,225,7.0,32.14,Traffic police intervention required
+J004,Nugegoda Junction,18,223,7.5,29.73,Traffic police intervention required

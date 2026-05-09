@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import from_json, col, window, avg, sum as spark_sum
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, TimestampType
+from pyspark.sql.functions import from_json, col, to_timestamp, window, avg, sum as spark_sum
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType
 
 spark = SparkSession.builder \
     .appName("SmartCityTrafficStreamProcessor") \
@@ -33,7 +33,7 @@ traffic_df = json_df.select(
 
 traffic_df = traffic_df.withColumn(
     "event_time",
-    col("timestamp").cast(TimestampType())
+    to_timestamp(col("timestamp"))
 )
 
 critical_alerts_df = traffic_df.filter(col("avg_speed") < 10)
@@ -79,6 +79,4 @@ window_query = congestion_window_df.writeStream \
     .queryName("CongestionWindowAnalysis") \
     .start()
 
-critical_query_console.awaitTermination()
-critical_query_file.awaitTermination()
-window_query.awaitTermination()
+spark.streams.awaitAnyTermination()
