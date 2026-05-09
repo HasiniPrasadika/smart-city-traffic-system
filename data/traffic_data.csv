@@ -1,17 +1,127 @@
 sensor_id,junction_name,timestamp,vehicle_count,avg_speed
-J001,Borella Junction,2026-04-24 07:10:00,45,25
-J001,Borella Junction,2026-04-24 08:20:00,95,8
-J001,Borella Junction,2026-04-24 08:40:00,88,9
-J001,Borella Junction,2026-04-24 17:30:00,70,18
-J002,Town Hall Junction,2026-04-24 07:15:00,60,22
-J002,Town Hall Junction,2026-04-24 09:10:00,110,7
-J002,Town Hall Junction,2026-04-24 09:45:00,100,9
-J002,Town Hall Junction,2026-04-24 18:10:00,80,15
-J003,Maradana Junction,2026-04-24 08:05:00,75,16
-J003,Maradana Junction,2026-04-24 12:20:00,40,35
-J003,Maradana Junction,2026-04-24 17:15:00,120,6
-J003,Maradana Junction,2026-04-24 17:50:00,105,8
-J004,Nugegoda Junction,2026-04-24 07:30:00,55,28
-J004,Nugegoda Junction,2026-04-24 10:15:00,65,24
-J004,Nugegoda Junction,2026-04-24 18:30:00,115,7
-J004,Nugegoda Junction,2026-04-24 18:45:00,108,8
+J001,Borella Junction,2026-04-24 06:00:00,28,42
+J001,Borella Junction,2026-04-24 06:15:00,32,40
+J001,Borella Junction,2026-04-24 06:30:00,38,36
+J001,Borella Junction,2026-04-24 06:45:00,44,32
+J001,Borella Junction,2026-04-24 07:00:00,58,26
+J001,Borella Junction,2026-04-24 07:15:00,67,22
+J001,Borella Junction,2026-04-24 07:30:00,76,18
+J001,Borella Junction,2026-04-24 07:45:00,83,14
+J001,Borella Junction,2026-04-24 08:00:00,96,9
+J001,Borella Junction,2026-04-24 08:15:00,104,7
+J001,Borella Junction,2026-04-24 08:30:00,98,8
+J001,Borella Junction,2026-04-24 08:45:00,91,10
+J001,Borella Junction,2026-04-24 09:00:00,72,16
+J001,Borella Junction,2026-04-24 09:15:00,66,18
+J001,Borella Junction,2026-04-24 09:30:00,59,22
+J001,Borella Junction,2026-04-24 09:45:00,52,26
+J001,Borella Junction,2026-04-24 11:00:00,40,34
+J001,Borella Junction,2026-04-24 11:30:00,43,32
+J001,Borella Junction,2026-04-24 12:00:00,50,28
+J001,Borella Junction,2026-04-24 12:30:00,47,30
+J001,Borella Junction,2026-04-24 15:00:00,55,25
+J001,Borella Junction,2026-04-24 15:30:00,62,22
+J001,Borella Junction,2026-04-24 16:00:00,70,19
+J001,Borella Junction,2026-04-24 16:30:00,78,16
+J001,Borella Junction,2026-04-24 17:00:00,86,13
+J001,Borella Junction,2026-04-24 17:15:00,92,11
+J001,Borella Junction,2026-04-24 17:30:00,88,12
+J001,Borella Junction,2026-04-24 17:45:00,81,15
+J001,Borella Junction,2026-04-24 18:00:00,73,18
+J001,Borella Junction,2026-04-24 18:30:00,61,24
+J001,Borella Junction,2026-04-24 20:00:00,42,35
+J001,Borella Junction,2026-04-24 21:00:00,30,43
+J002,Town Hall Junction,2026-04-24 06:00:00,34,38
+J002,Town Hall Junction,2026-04-24 06:15:00,39,35
+J002,Town Hall Junction,2026-04-24 06:30:00,45,31
+J002,Town Hall Junction,2026-04-24 06:45:00,52,28
+J002,Town Hall Junction,2026-04-24 07:00:00,65,23
+J002,Town Hall Junction,2026-04-24 07:15:00,74,19
+J002,Town Hall Junction,2026-04-24 07:30:00,82,16
+J002,Town Hall Junction,2026-04-24 07:45:00,88,13
+J002,Town Hall Junction,2026-04-24 08:00:00,95,11
+J002,Town Hall Junction,2026-04-24 08:15:00,106,8
+J002,Town Hall Junction,2026-04-24 08:30:00,112,7
+J002,Town Hall Junction,2026-04-24 08:45:00,100,9
+J002,Town Hall Junction,2026-04-24 09:00:00,116,7
+J002,Town Hall Junction,2026-04-24 09:15:00,121,6
+J002,Town Hall Junction,2026-04-24 09:30:00,109,8
+J002,Town Hall Junction,2026-04-24 09:45:00,97,10
+J002,Town Hall Junction,2026-04-24 11:00:00,58,27
+J002,Town Hall Junction,2026-04-24 11:30:00,61,25
+J002,Town Hall Junction,2026-04-24 12:00:00,70,22
+J002,Town Hall Junction,2026-04-24 12:30:00,66,24
+J002,Town Hall Junction,2026-04-24 15:00:00,64,24
+J002,Town Hall Junction,2026-04-24 15:30:00,71,21
+J002,Town Hall Junction,2026-04-24 16:00:00,83,17
+J002,Town Hall Junction,2026-04-24 16:30:00,91,14
+J002,Town Hall Junction,2026-04-24 17:00:00,98,12
+J002,Town Hall Junction,2026-04-24 17:15:00,104,10
+J002,Town Hall Junction,2026-04-24 17:30:00,96,13
+J002,Town Hall Junction,2026-04-24 17:45:00,89,16
+J002,Town Hall Junction,2026-04-24 18:00:00,80,18
+J002,Town Hall Junction,2026-04-24 18:30:00,72,22
+J002,Town Hall Junction,2026-04-24 20:00:00,49,31
+J002,Town Hall Junction,2026-04-24 21:00:00,36,39
+J003,Maradana Junction,2026-04-24 06:00:00,25,44
+J003,Maradana Junction,2026-04-24 06:15:00,31,41
+J003,Maradana Junction,2026-04-24 06:30:00,36,37
+J003,Maradana Junction,2026-04-24 06:45:00,42,34
+J003,Maradana Junction,2026-04-24 07:00:00,55,28
+J003,Maradana Junction,2026-04-24 07:15:00,63,24
+J003,Maradana Junction,2026-04-24 07:30:00,69,21
+J003,Maradana Junction,2026-04-24 07:45:00,74,18
+J003,Maradana Junction,2026-04-24 08:00:00,78,16
+J003,Maradana Junction,2026-04-24 08:15:00,84,14
+J003,Maradana Junction,2026-04-24 08:30:00,80,15
+J003,Maradana Junction,2026-04-24 08:45:00,72,18
+J003,Maradana Junction,2026-04-24 09:00:00,62,23
+J003,Maradana Junction,2026-04-24 09:30:00,56,26
+J003,Maradana Junction,2026-04-24 11:00:00,44,32
+J003,Maradana Junction,2026-04-24 11:30:00,48,30
+J003,Maradana Junction,2026-04-24 12:00:00,54,27
+J003,Maradana Junction,2026-04-24 12:30:00,51,29
+J003,Maradana Junction,2026-04-24 15:00:00,68,20
+J003,Maradana Junction,2026-04-24 15:30:00,78,17
+J003,Maradana Junction,2026-04-24 16:00:00,91,13
+J003,Maradana Junction,2026-04-24 16:30:00,103,9
+J003,Maradana Junction,2026-04-24 17:00:00,119,6
+J003,Maradana Junction,2026-04-24 17:15:00,124,5
+J003,Maradana Junction,2026-04-24 17:30:00,116,7
+J003,Maradana Junction,2026-04-24 17:45:00,108,8
+J003,Maradana Junction,2026-04-24 18:00:00,96,12
+J003,Maradana Junction,2026-04-24 18:30:00,82,17
+J003,Maradana Junction,2026-04-24 20:00:00,48,33
+J003,Maradana Junction,2026-04-24 21:00:00,34,41
+J004,Nugegoda Junction,2026-04-24 06:00:00,22,46
+J004,Nugegoda Junction,2026-04-24 06:15:00,27,43
+J004,Nugegoda Junction,2026-04-24 06:30:00,33,39
+J004,Nugegoda Junction,2026-04-24 06:45:00,39,35
+J004,Nugegoda Junction,2026-04-24 07:00:00,51,30
+J004,Nugegoda Junction,2026-04-24 07:15:00,58,27
+J004,Nugegoda Junction,2026-04-24 07:30:00,64,24
+J004,Nugegoda Junction,2026-04-24 07:45:00,69,21
+J004,Nugegoda Junction,2026-04-24 08:00:00,74,19
+J004,Nugegoda Junction,2026-04-24 08:15:00,79,17
+J004,Nugegoda Junction,2026-04-24 08:30:00,76,18
+J004,Nugegoda Junction,2026-04-24 08:45:00,68,22
+J004,Nugegoda Junction,2026-04-24 09:00:00,61,26
+J004,Nugegoda Junction,2026-04-24 09:30:00,54,29
+J004,Nugegoda Junction,2026-04-24 11:00:00,47,34
+J004,Nugegoda Junction,2026-04-24 11:30:00,52,31
+J004,Nugegoda Junction,2026-04-24 12:00:00,59,28
+J004,Nugegoda Junction,2026-04-24 12:30:00,56,30
+J004,Nugegoda Junction,2026-04-24 15:00:00,72,20
+J004,Nugegoda Junction,2026-04-24 15:30:00,81,17
+J004,Nugegoda Junction,2026-04-24 16:00:00,90,14
+J004,Nugegoda Junction,2026-04-24 16:30:00,99,11
+J004,Nugegoda Junction,2026-04-24 17:00:00,106,9
+J004,Nugegoda Junction,2026-04-24 17:15:00,112,8
+J004,Nugegoda Junction,2026-04-24 17:30:00,118,7
+J004,Nugegoda Junction,2026-04-24 17:45:00,110,8
+J004,Nugegoda Junction,2026-04-24 18:00:00,121,7
+J004,Nugegoda Junction,2026-04-24 18:15:00,116,8
+J004,Nugegoda Junction,2026-04-24 18:30:00,108,9
+J004,Nugegoda Junction,2026-04-24 18:45:00,95,12
+J004,Nugegoda Junction,2026-04-24 20:00:00,57,31
+J004,Nugegoda Junction,2026-04-24 21:00:00,41,38
