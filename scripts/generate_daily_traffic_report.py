@@ -3,6 +3,12 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA_PATH = os.path.join(BASE_DIR, "data", "traffic_data.csv")
@@ -13,7 +19,7 @@ CHART_PATH = os.path.join(REPORT_DIR, "traffic_volume_chart.png")
 
 POSTGRES_CONFIG = {
     "host": os.getenv("POSTGRES_HOST", "localhost"),
-    "port": int(os.getenv("POSTGRES_PORT", "55432")),
+    "port": int(os.getenv("POSTGRES_HOST_PORT", os.getenv("POSTGRES_PORT", "55432"))),
     "dbname": os.getenv("POSTGRES_DB", "traffic_db"),
     "user": os.getenv("POSTGRES_USER", "traffic_user"),
     "password": os.getenv("POSTGRES_PASSWORD", "traffic_pass"),

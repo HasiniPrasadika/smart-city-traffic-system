@@ -5,6 +5,12 @@ import os
 import pandas as pd
 import streamlit as st
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 REPORT_DIR = os.path.join(BASE_DIR, "reports")

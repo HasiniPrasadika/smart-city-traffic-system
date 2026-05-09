@@ -1,11 +1,19 @@
 import json
+import os
 import random
 import time
 from datetime import datetime
 from kafka import KafkaProducer
 
-KAFKA_TOPIC = "traffic-data"
-KAFKA_SERVER = "localhost:9092"
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "traffic-data")
+KAFKA_SERVER = os.getenv("KAFKA_SERVER", "localhost:9092")
+PRODUCER_INTERVAL_SECONDS = float(os.getenv("PRODUCER_INTERVAL_SECONDS", "1"))
 
 producer = KafkaProducer(
     bootstrap_servers=KAFKA_SERVER,
@@ -97,7 +105,7 @@ try:
                 f"Status: {data['traffic_status']}"
             )
 
-        time.sleep(1)
+        time.sleep(PRODUCER_INTERVAL_SECONDS)
 
 except KeyboardInterrupt:
     print("Producer stopped.")

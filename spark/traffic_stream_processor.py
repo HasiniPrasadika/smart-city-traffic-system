@@ -4,6 +4,15 @@ import os
 from pyspark.sql.functions import from_json, col, to_timestamp, window, avg, sum as spark_sum, when
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, BooleanType
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+KAFKA_SERVER = os.getenv("KAFKA_SERVER", "localhost:9092")
+KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "traffic-data")
+
 spark = SparkSession.builder \
     .appName("SmartCityTrafficStreamProcessor") \
     .master("local[*]") \
@@ -28,8 +37,8 @@ schema = StructType([
 
 kafka_df = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "localhost:9092") \
-    .option("subscribe", "traffic-data") \
+    .option("kafka.bootstrap.servers", KAFKA_SERVER) \
+    .option("subscribe", KAFKA_TOPIC) \
     .option("startingOffsets", "latest") \
     .load()
 
@@ -69,7 +78,10 @@ congestion_window_df = traffic_df \
     )
 
 POSTGRES_ENABLED = os.getenv("POSTGRES_ENABLED", "false").lower() == "true"
-POSTGRES_URL = os.getenv("POSTGRES_URL", "jdbc:postgresql://localhost:5432/traffic_db")
+POSTGRES_HOST = os.getenv("POSTGRES_HOST", "localhost")
+POSTGRES_HOST_PORT = os.getenv("POSTGRES_HOST_PORT", os.getenv("POSTGRES_PORT", "55432"))
+POSTGRES_DB = os.getenv("POSTGRES_DB", "traffic_db")
+POSTGRES_URL = os.getenv("POSTGRES_URL", f"jdbc:postgresql://{POSTGRES_HOST}:{POSTGRES_HOST_PORT}/{POSTGRES_DB}")
 POSTGRES_USER = os.getenv("POSTGRES_USER", "traffic_user")
 POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "traffic_pass")
 
@@ -84,6 +96,15 @@ def write_to_postgres(batch_df, batch_id, table_name):
         .option("driver", "org.postgresql.Driver") \
         .mode("append") \
         .save()
+
+
+def write_congestion_metrics(batch_df, batch_id):
+    if batch_df.rdd.isEmpty():
+        return
+
+    batch_df.coalesce(1).write \
+        .mode("append") \
+        .json(f"output/congestion_metrics/batch_id={batch_id}")
 
 # Query 1: Critical alerts → console
 critical_query_console = critical_alerts_df.writeStream \
@@ -112,9 +133,8 @@ window_query = congestion_window_df.writeStream \
 
 # Query 4: Window aggregation → folder
 window_file_query = congestion_window_df.writeStream \
-    .outputMode("append") \
-    .format("json") \
-    .option("path", "output/congestion_metrics") \
+    .outputMode("update") \
+    .foreachBatch(write_congestion_metrics) \
     .option("checkpointLocation", "output/checkpoints/congestion_metrics") \
     .queryName("CongestionWindowMetrics_File") \
     .start()

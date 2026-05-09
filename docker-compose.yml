@@ -24,11 +24,11 @@ services:
     image: postgres:14.20-trixie
     container_name: traffic-postgres
     environment:
-      POSTGRES_DB: traffic_db
-      POSTGRES_USER: traffic_user
-      POSTGRES_PASSWORD: traffic_pass
+      POSTGRES_DB: ${POSTGRES_DB:-traffic_db}
+      POSTGRES_USER: ${POSTGRES_USER:-traffic_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-traffic_pass}
     ports:
-      - "55432:5432"
+      - "${POSTGRES_HOST_PORT:-55432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
