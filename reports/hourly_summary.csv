@@ -1,0 +1,49 @@
+sensor_id,junction_name,hour,total_vehicle_count,avg_speed,congestion_index
+J001,Borella Junction,6,142,37.5,3.79
+J001,Borella Junction,7,284,20.0,14.2
+J001,Borella Junction,8,389,8.5,45.76
+J001,Borella Junction,9,249,20.5,12.15
+J001,Borella Junction,11,83,33.0,2.52
+J001,Borella Junction,12,97,29.0,3.34
+J001,Borella Junction,15,117,23.5,4.98
+J001,Borella Junction,16,148,17.5,8.46
+J001,Borella Junction,17,347,12.75,27.22
+J001,Borella Junction,18,134,21.0,6.38
+J001,Borella Junction,20,42,35.0,1.2
+J001,Borella Junction,21,30,43.0,0.7
+J002,Town Hall Junction,6,170,33.0,5.15
+J002,Town Hall Junction,7,309,17.75,17.41
+J002,Town Hall Junction,8,413,8.75,47.2
+J002,Town Hall Junction,9,443,7.75,57.16
+J002,Town Hall Junction,11,119,26.0,4.58
+J002,Town Hall Junction,12,136,23.0,5.91
+J002,Town Hall Junction,15,135,22.5,6.0
+J002,Town Hall Junction,16,174,15.5,11.23
+J002,Town Hall Junction,17,387,12.75,30.35
+J002,Town Hall Junction,18,152,20.0,7.6
+J002,Town Hall Junction,20,49,31.0,1.58
+J002,Town Hall Junction,21,36,39.0,0.92
+J003,Maradana Junction,6,134,39.0,3.44
+J003,Maradana Junction,7,261,22.75,11.47
+J003,Maradana Junction,8,314,15.75,19.94
+J003,Maradana Junction,9,118,24.5,4.82
+J003,Maradana Junction,11,92,31.0,2.97
+J003,Maradana Junction,12,105,28.0,3.75
+J003,Maradana Junction,15,146,18.5,7.89
+J003,Maradana Junction,16,194,11.0,17.64
+J003,Maradana Junction,17,467,6.5,71.85
+J003,Maradana Junction,18,178,14.5,12.28
+J003,Maradana Junction,20,48,33.0,1.45
+J003,Maradana Junction,21,34,41.0,0.83
+J004,Nugegoda Junction,6,121,40.75,2.97
+J004,Nugegoda Junction,7,242,25.5,9.49
+J004,Nugegoda Junction,8,297,19.0,15.63
+J004,Nugegoda Junction,9,115,27.5,4.18
+J004,Nugegoda Junction,11,99,32.5,3.05
+J004,Nugegoda Junction,12,115,29.0,3.97
+J004,Nugegoda Junction,15,153,18.5,8.27
+J004,Nugegoda Junction,16,189,12.5,15.12
+J004,Nugegoda Junction,17,446,8.0,55.75
+J004,Nugegoda Junction,18,440,9.0,48.89
+J004,Nugegoda Junction,20,57,31.0,1.84
+J004,Nugegoda Junction,21,41,38.0,1.08

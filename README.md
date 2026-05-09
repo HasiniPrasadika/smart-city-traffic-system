@@ -14,6 +14,8 @@ reports/                                  Generated CSV and chart outputs
 docs/architecture_diagram.md              Mermaid architecture diagram
 docs/analytical_report.md                 Analytical report
 docs/project_report.md                    Project report
+dashboard/traffic_dashboard.py            Streamlit dashboard
+postgres/init.sql                         PostgreSQL schema
 ```
 
 ## Run Kafka
@@ -22,6 +24,25 @@ docs/project_report.md                    Project report
 docker compose up -d
 docker exec -it kafka kafka-topics --create --topic traffic-data --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
 docker exec -it kafka kafka-topics --list --bootstrap-server localhost:9092
+```
+
+This also starts PostgreSQL using `postgres:14.20-trixie`.
+
+PostgreSQL connection:
+
+```text
+host: localhost
+host port: 55432
+container port: 5432
+database: traffic_db
+user: traffic_user
+password: traffic_pass
+```
+
+From the host machine, PostgreSQL is exposed on port `55432` to avoid conflicts with local PostgreSQL installs:
+
+```bash
+PGPASSWORD=traffic_pass psql -h localhost -p 55432 -U traffic_user -d traffic_db
 ```
 
 ## Run Producer
@@ -48,6 +69,14 @@ spark-submit \
 
 Critical alerts are saved to `output/critical_alerts`.
 
+To also write streaming critical alerts to PostgreSQL, include the PostgreSQL JDBC driver and enable the sink:
+
+```bash
+POSTGRES_ENABLED=true spark-submit \
+  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1,org.postgresql:postgresql:42.7.3 \
+  spark/traffic_stream_processor.py
+```
+
 ## Generate Daily Report Locally
 
 ```bash
@@ -58,9 +87,21 @@ python3 scripts/generate_daily_traffic_report.py
 Outputs:
 
 ```text
+reports/hourly_summary.csv
 reports/daily_peak_report.csv
 reports/traffic_volume_chart.png
 ```
+
+The Airflow DAG also loads `hourly_summary` and `daily_peak_report` into PostgreSQL.
+
+## Run Dashboard
+
+```bash
+python3 -m pip install streamlit
+streamlit run dashboard/traffic_dashboard.py
+```
+
+The dashboard shows peak congestion results, hourly congestion trends, the traffic volume chart, and saved critical alert records.
 
 ## Run Airflow DAG
 
@@ -79,4 +120,3 @@ airflow scheduler
 ```
 
 Open `http://localhost:8080`, enable `daily_smart_city_traffic_report`, and trigger the DAG.
-
